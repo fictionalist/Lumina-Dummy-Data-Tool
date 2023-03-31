@@ -11,12 +11,6 @@ Tool that allows exporting and importing dummy data into MELTY BLOOD: TYPE LUMIN
 
 * VS C++ 2022 redistributable (https://aka.ms/vs/17/release/vc_redist.x86.exe)
 
-## Known limitations
-
-* The tool does not extract save states.
-* The tool does not handle the Rapid Beat Type for either player. This is important when sharing dummy data, as people might prefer to access Rapid Beat and Rapid Beat Launch differently, or not at all. (5AAA vs 5A 5A+B 5A+B, for instance)
-* As the player, you must be on P1 side on character selection. The dummy data will only work properly if the dummy is on P2.
-
 ## How to use
 
 Opening `ldd.exe` will open the main window of the tool. All the buttons will be disabled initially if the game is not running yet. Launching Lumina, and then clicking the window, will enable all buttons except the Save buttons.
@@ -25,6 +19,13 @@ If Lumina was running before the tool was launched, it will behave as normal and
 Upon recording a dummy in any of the slots ingame, and then clicking on the tool's window, the length of the slot will be populated, as well as enable the corresponding Save button.
 
 The tool refreshes itself every time it is clicked. If you're running it on a separate monitor, it will not update any of the values in its window until you click its' window.
+
+## Limitations and troubleshooting
+
+* The tool does not extract save states.
+* The tool does not handle the Rapid Beat Type for either player. This is important when sharing dummy data, as people might prefer to access Rapid Beat and Rapid Beat Launch differently, or not at all. (5AAA vs 5A 5A+B 5A+B, for instance)
+* As the player, you must be on P1 side on character selection. The dummy data will only work properly if the dummy is on P2.
+* After opening the game, before opening Training Mode, the game does not recognize any loaded dummy data other than the first slot, despite writing correctly to it. It is recommended in this case to always first load any dummy data into the first slot, or to record any inputs in any of the dummy slots ingame.
 
 ## Dummy data format
 
