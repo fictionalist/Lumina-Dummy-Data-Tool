@@ -34,4 +34,7 @@
 /bin
 /build/Release
 /Lumina Dummy Data Tool.vcxproj.user
+<<<<<<< HEAD
 /build/test
+=======
+>>>>>>> fcc73aee421fc3f98ef298b9690c8a7942ab1de9

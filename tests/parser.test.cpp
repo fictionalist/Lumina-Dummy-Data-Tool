@@ -10,7 +10,6 @@ namespace Test
 	TEST_CLASS(MainClass)
 	{
 	public:
-
 		TEST_METHOD(SaveFiveEmptyFrames) {
 			// 0 : 5
 
@@ -36,7 +35,6 @@ namespace Test
 
 		TEST_METHOD(LoadInputStringIntoBytes) {
 			std::string in = "2: 2\n5-7: 2\n8: 2C\n10: 5\n";
-
 			unsigned char output[11 * 4];
 			memset(output, 0, sizeof(output));
 			size_t dummySize = 0;
