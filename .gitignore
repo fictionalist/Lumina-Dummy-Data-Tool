@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+/.vs/Lumina Dummy Data Tool
+/bin
+/build/Release
+/Lumina Dummy Data Tool.vcxproj.user
