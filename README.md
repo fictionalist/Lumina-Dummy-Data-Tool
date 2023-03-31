@@ -11,15 +11,12 @@ Tool that allows exporting and importing dummy data into MELTY BLOOD: TYPE LUMIN
 
 * VS C++ 2022 redistributable (https://aka.ms/vs/17/release/vc_redist.x86.exe)
 
-<<<<<<< HEAD
 ## Known limitations
 
 * The tool does not extract save states.
 * The tool does not handle the Rapid Beat Type for either player. This is important when sharing dummy data, as people might prefer to access Rapid Beat and Rapid Beat Launch differently, or not at all. (5AAA vs 5A 5A+B 5A+B, for instance)
 * As the player, you must be on P1 side on character selection. The dummy data will only work properly if the dummy is on P2.
 
-=======
->>>>>>> fcc73aee421fc3f98ef298b9690c8a7942ab1de9
 ## How to use
 
 Opening `ldd.exe` will open the main window of the tool. All the buttons will be disabled initially if the game is not running yet. Launching Lumina, and then clicking the window, will enable all buttons except the Save buttons.
@@ -29,8 +26,6 @@ Upon recording a dummy in any of the slots ingame, and then clicking on the tool
 
 The tool refreshes itself every time it is clicked. If you're running it on a separate monitor, it will not update any of the values in its window until you click its' window.
 
-<<<<<<< HEAD
-=======
 ## Limitations and troubleshooting
 
 * The tool does not extract save states.
@@ -38,7 +33,6 @@ The tool refreshes itself every time it is clicked. If you're running it on a se
 * As the player, you must be on P1 side on character selection. The dummy data will only work properly if the dummy is on P2.
 * After opening the game, before opening Training Mode, the game does not recognize any loaded dummy data other than the first slot, despite writing correctly to it. It is recommended in this case to always first load any dummy data into the first slot, or to record any inputs in any of the dummy slots ingame.
 
->>>>>>> fcc73aee421fc3f98ef298b9690c8a7942ab1de9
 ## Dummy data format
 
 Upon exporting any dummy data, it will be extracted with the following format:
@@ -73,8 +67,4 @@ Furthermore, you can insert comments with either `#` or `//` at the start of any
 
 ## Load as reversal timing
 
-<<<<<<< HEAD
 Upon saving dummy data, it can be reloaded with reversal timing. This means that the tool will remove any frames that have no directional or button input until the very first frame that does have any meaningful input. This *should* be useful together with the Reversal Action, Guarding or Hit, and Same Time as Reversal Action Dummy Setting in-game.
-=======
-Upon saving dummy data, it can be reloaded with reversal timing. This means that the tool will remove any frames that have no directional or button input until the very first frame that does have any meaningful input. This *should* be useful together with the Reversal Action, Guarding or Hit, and Same Time as Reversal Action Dummy Setting in-game.
->>>>>>> fcc73aee421fc3f98ef298b9690c8a7942ab1de9
