@@ -11,14 +11,11 @@ Tool that allows exporting and importing dummy data into MELTY BLOOD: TYPE LUMIN
 
 * VS C++ 2022 redistributable (https://aka.ms/vs/17/release/vc_redist.x86.exe)
 
-=========
-=========
 ## Known limitations
 
 * The tool does not extract save states.
 * The tool does not handle the Rapid Beat Type for either player. This is important when sharing dummy data, as people might prefer to access Rapid Beat and Rapid Beat Launch differently, or not at all. (5AAA vs 5A 5A+B 5A+B, for instance)
 
->>>>>>>>> Temporary merge branch 2
 ## How to use
 
 Opening `ldd.exe` will open the main window of the tool. All the buttons will be disabled initially if the game is not running yet. Launching Lumina, and then clicking the window, will enable all buttons except the Save buttons.
@@ -27,14 +24,12 @@ If Lumina was running before the tool was launched, it will behave as normal and
 Upon recording a dummy in any of the slots ingame, and then clicking on the tool's window, the length of the slot will be populated, as well as enable the corresponding Save button.
 
 
-<<<<<<<<< Temporary merge branch 1
 ## Limitations and troubleshooting
 
 * The tool does not extract save states.
 * The tool does not handle the Rapid Beat Type for either player. This is important when sharing dummy data, as people might prefer to access Rapid Beat and Rapid Beat Launch differently, or not at all. (5AAA vs 5A 5A+B 5A+B, for instance)
 * As the player, you must be on P1 side on character selection. The dummy data will only work properly if the dummy is on P2.
-=========
->>>>>>>>> Temporary merge branch 2
+
 ## Dummy data format
 
 Upon exporting any dummy data, it will be extracted with the following format:
@@ -69,4 +64,3 @@ Furthermore, you can insert comments with either `#` or `//` at the start of any
 
 Upon saving dummy data, it can be reloaded with reversal timing. This means that the tool will remove any frames that have no directional or button input until the very first frame that does have any meaningful input. This *should* be useful together with the Reversal Action, Guarding or Hit, and Same Time as Reversal Action Dummy Setting in-game.
 Upon saving dummy data, it can be reloaded with reversal timing. This means that the tool will remove any frames that have no directional or button input until the very first frame that does have any meaningful input. This *should* be useful together with the Reversal Action, Guarding or Hit, and Same Time as Reversal Action Dummy Setting in-game.
->>>>>>>>> Temporary merge branch 2
