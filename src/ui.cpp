@@ -2,10 +2,12 @@
 
 #include <Windows.h>
 #include <string>
+#include <sstream>
 #include <commdlg.h>
 #include <ShObjIdl.h>
 
 #include <resources/resource.h>
+#include "definitions.hpp"
 
 // resource ID for the status bar is kept outside resource.h because otherwise any updates to it delete it or even end up generating conflicting resource IDs with it
 #define StatusText						1200
@@ -269,7 +271,12 @@ INT_PTR CALLBACK UI::windowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM l
 	case WM_INITDIALOG: {
 		CreateWindowEx(0, STATUSCLASSNAMEW, 0, WS_CHILD | WS_VISIBLE, 0, 0, 0, 0, hWnd, (HMENU)StatusText, GetModuleHandle(0), 0);
 
+		std::stringstream titleStringStream;
+		titleStringStream << "Lumina Dummy Data Tool v" << VersionMajor << "." << VersionMinor << "." << VersionPatch;
+		std::string titleString = titleStringStream.str();
+
 		UI::window = hWnd;
+		SetWindowTextA(hWnd, titleString.c_str());
 		UI::statusText = GetDlgItem(hWnd, StatusText);
 
 		UI::Slot1_FrameCount_Text = GetDlgItem(hWnd, Slot1_FrameCount);

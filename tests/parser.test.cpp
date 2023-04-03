@@ -11,8 +11,6 @@ namespace Test
 	{
 	public:
 		TEST_METHOD(SaveFiveEmptyFrames) {
-			// 0 : 5
-
 			unsigned char input[] = {
 				0x00, 0x00, 0x00, 0x00,	//0 - 1	: 5
 				0x00, 0x00, 0x00, 0x00,

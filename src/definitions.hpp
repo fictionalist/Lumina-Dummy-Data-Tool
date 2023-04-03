@@ -2,6 +2,7 @@
 
 const unsigned int VersionMajor = 1;
 const unsigned int VersionMinor = 0;
+const unsigned int VersionPatch = 1;
 
 const wchar_t GameWindowName[] = L"MELTY BLOOD: TYPE LUMINA ";
 const wchar_t GameExecutableName[] = L"MBTL.exe";
@@ -15,6 +16,12 @@ const unsigned int DummyData2_SizeAddress = 0x17C08E4;
 const unsigned int DummyData3_SizeAddress = 0x17C0944;
 const unsigned int DummyData4_SizeAddress = 0x17C09A4;
 const unsigned int DummyData5_SizeAddress = 0x17C0A04;
+
+const unsigned int DummyData1_EnabledFlag = 0x17C0880;
+const unsigned int DummyData2_EnabledFlag = 0x17C08E0;
+const unsigned int DummyData3_EnabledFlag = 0x17C0940;
+const unsigned int DummyData4_EnabledFlag = 0x17C09A0;
+const unsigned int DummyData5_EnabledFlag = 0x17C0A00;
 
 const unsigned int DummyData1_BlockStartAddress = 0x17C0BEC;
 const unsigned int DummyData1_BlockEndAddress = DummyData1_BlockStartAddress + DummyDataMaxSize;

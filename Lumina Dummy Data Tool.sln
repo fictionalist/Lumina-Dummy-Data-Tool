@@ -3,7 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-<<<<<<< HEAD
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ldd", "ldd.vcxproj", "{E8F762BD-9996-4B67-B86F-68F8F5206317}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Unit Tests", "tests\Unit Tests.vcxproj", "{C5DDF9E1-DAB8-4DA1-A1DF-8795E8E74D55}"
@@ -32,26 +31,6 @@ Global
 		{C5DDF9E1-DAB8-4DA1-A1DF-8795E8E74D55}.Release|x64.Build.0 = Release|Win32
 		{C5DDF9E1-DAB8-4DA1-A1DF-8795E8E74D55}.Release|x86.ActiveCfg = Release|Win32
 		{C5DDF9E1-DAB8-4DA1-A1DF-8795E8E74D55}.Release|x86.Build.0 = Release|Win32
-=======
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Unit Tests", "tests\UnitTest1.vcxproj", "{CFF966DF-DD66-4588-9786-BACDD228425D}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ldd", "ldd.vcxproj", "{E8F762BD-9996-4B67-B86F-68F8F5206317}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x86 = Debug|x86
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CFF966DF-DD66-4588-9786-BACDD228425D}.Debug|x86.ActiveCfg = Debug|Win32
-		{CFF966DF-DD66-4588-9786-BACDD228425D}.Debug|x86.Build.0 = Debug|Win32
-		{CFF966DF-DD66-4588-9786-BACDD228425D}.Release|x86.ActiveCfg = Release|Win32
-		{CFF966DF-DD66-4588-9786-BACDD228425D}.Release|x86.Build.0 = Release|Win32
-		{E8F762BD-9996-4B67-B86F-68F8F5206317}.Debug|x86.ActiveCfg = Debug|Win32
-		{E8F762BD-9996-4B67-B86F-68F8F5206317}.Debug|x86.Build.0 = Debug|Win32
-		{E8F762BD-9996-4B67-B86F-68F8F5206317}.Release|x86.ActiveCfg = Release|Win32
-		{E8F762BD-9996-4B67-B86F-68F8F5206317}.Release|x86.Build.0 = Release|Win32
->>>>>>> fcc73aee421fc3f98ef298b9690c8a7942ab1de9
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
