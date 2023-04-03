@@ -10,6 +10,10 @@ namespace Test
 	TEST_CLASS(MainClass)
 	{
 	public:
+		
+=========
+
+>>>>>>>>> Temporary merge branch 2
 		TEST_METHOD(SaveFiveEmptyFrames) {
 			unsigned char input[] = {
 				0x00, 0x00, 0x00, 0x00,	//0 - 1	: 5
@@ -29,10 +33,10 @@ namespace Test
 			std::string expected = "2: 2\n5-7: 2\n8: 2C\n10: 5\n";
 
 			Assert::IsTrue(out.compare(expected) == 0);
-		}
+			
+=========
 
-		TEST_METHOD(LoadInputStringIntoBytes) {
-			std::string in = "2: 2\n5-7: 2\n8: 2C\n10: 5\n";
+>>>>>>>>> Temporary merge branch 2
 			unsigned char output[11 * 4];
 			memset(output, 0, sizeof(output));
 			size_t dummySize = 0;
