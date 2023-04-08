@@ -11,11 +11,6 @@ Tool that allows exporting and importing dummy data into MELTY BLOOD: TYPE LUMIN
 
 * VS C++ 2022 redistributable (https://aka.ms/vs/17/release/vc_redist.x86.exe)
 
-## Known limitations
-
-* The tool does not extract save states.
-* The tool does not handle the Rapid Beat Type for either player. This is important when sharing dummy data, as people might prefer to access Rapid Beat and Rapid Beat Launch differently, or not at all. (5AAA vs 5A 5A+B 5A+B, for instance)
-
 ## How to use
 
 Opening `ldd.exe` will open the main window of the tool. All the buttons will be disabled initially if the game is not running yet. Launching Lumina, and then clicking the window, will enable all buttons except the Save buttons.
