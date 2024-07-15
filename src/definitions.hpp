@@ -1,7 +1,7 @@
 #pragma once
 
 const unsigned int VersionMajor = 1;
-const unsigned int VersionMinor = 1;
+const unsigned int VersionMinor = 2;
 const unsigned int VersionPatch = 0;
 
 const wchar_t GameWindowName[] = L"MELTY BLOOD: TYPE LUMINA ";
