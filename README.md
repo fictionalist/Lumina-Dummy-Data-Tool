@@ -50,12 +50,13 @@ When reading, the tool will interpret direction 0 and 5 as the same direction (n
 
 This should allow for a fine tuning of the dummy data.
 
-Furthermore, you can insert comments with either `#` or `//` at the start of any line, or after any input.
+## In addition you can now add comments directly on the GUI and have these too be imported and exported
+
+If you so choose to, you can also insert comments the legacy way with either `#` or `//` at the start of any line, or after any input.
 
 ```
     # this is a comment
     4: 5C // this is also another comment
 ```
 
-Upon saving dummy data, it can be reloaded with reversal timing. This means that the tool will remove any frames that have no directional or button input until the very first frame that does have any meaningful input. This *should* be useful together with the Reversal Action, Guarding or Hit, and Same Time as Reversal Action Dummy Setting in-game.
 Upon saving dummy data, it can be reloaded with reversal timing. This means that the tool will remove any frames that have no directional or button input until the very first frame that does have any meaningful input. This *should* be useful together with the Reversal Action, Guarding or Hit, and Same Time as Reversal Action Dummy Setting in-game.
