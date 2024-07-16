@@ -2,11 +2,11 @@
 
 const unsigned int VersionMajor = 1;
 const unsigned int VersionMinor = 2;
-const unsigned int VersionPatch = 0;
+const unsigned int VersionPatch = 1;
 
 const wchar_t GameWindowName[] = L"MELTY BLOOD: TYPE LUMINA ";
 const wchar_t GameExecutableName[] = L"MBTL.exe";
-const char MeltyBloodUpdateDatecode[] = "5/23/2024";
+const char MeltyBloodUpdateDatecode[] = "2023/02/10";
 
 const unsigned int DummyDataMaxNumFrame = 1798;
 const unsigned int DummyDataMaxSize = DummyDataMaxNumFrame * sizeof(int);

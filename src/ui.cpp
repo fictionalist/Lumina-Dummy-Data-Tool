@@ -186,6 +186,26 @@ bool UI::openFileIntoSlot(HWND hWnd, unsigned int slot, bool reversalTiming) {
 			buffer = buffer.substr(11, buffer.size());
 			SetWindowTextA(Slot5_Comments_Text, buffer.c_str());
 		}
+
+	}
+	else {
+		char commentData[10] = "";
+		buildDummyDataDisplay();
+		if (slot == 1) {
+			SetWindowTextA(Slot1_Comments_Text, commentData);
+		}
+		if (slot == 2) {
+			SetWindowTextA(Slot2_Comments_Text, commentData);
+		}
+		if (slot == 3) {
+			SetWindowTextA(Slot3_Comments_Text, commentData);
+		}
+		if (slot == 4) {
+			SetWindowTextA(Slot4_Comments_Text, commentData);
+		}
+		if (slot == 5) {
+			SetWindowTextA(Slot5_Comments_Text, commentData);
+		}
 	}
 
 	return true;
