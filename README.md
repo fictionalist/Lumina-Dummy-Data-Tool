@@ -52,6 +52,8 @@ This should allow for a fine tuning of the dummy data.
 
 ## In addition you can now add comments directly on the GUI and have these too be imported and exported
 
+![image](https://github.com/user-attachments/assets/e37a489d-f996-41df-8da8-cc5923ca1adb)
+
 If you so choose to, you can also insert comments the legacy way with either `#` or `//` at the start of any line, or after any input.
 
 ```
