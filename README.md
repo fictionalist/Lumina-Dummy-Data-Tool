@@ -1,6 +1,6 @@
 # ldd - Lumina Dummy Data Tool
 
-Tool that allows exporting and importing dummy data into MELTY BLOOD: TYPE LUMINA. Currently supports update `2024/05/23`/`v1.46`; **not guaranteed** to work with future updates.
+This is a Fork of the tool originally made by fictionalist that allows exporting and importing dummy data into MELTY BLOOD: TYPE LUMINA, which now works with the current update: `V1.46`.
 
 * Allows exporting the data from any of the five dummy slots into a readable text file.
 * Allows importing the data from a saved file into any of the five slots of the game.
@@ -13,7 +13,7 @@ Tool that allows exporting and importing dummy data into MELTY BLOOD: TYPE LUMIN
 
 ## How to use
 
-Opening `ldd.exe` will open the main window of the tool. All the buttons will be disabled initially if the game is not running yet. Launching Lumina, and then clicking the window, will enable all buttons except the Save buttons.
+Opening `Lumina Dummy Data Tool.exe` will open the main window of the tool. All the buttons will be disabled initially if the game is not running yet. Launching Lumina, and then clicking the window, will enable all buttons except the Save buttons.
 If Lumina was running before the tool was launched, it will behave as normal and enable all the Load, Load as Reversal, and Clear buttons.
 
 Upon recording a dummy in any of the slots ingame, and then clicking on the tool's window, the length of the slot will be populated, as well as enable the corresponding Save button.
