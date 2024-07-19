@@ -1,6 +1,6 @@
 # ldd - Lumina Dummy Data Tool
 
-Tool that allows exporting and importing dummy data into MELTY BLOOD: TYPE LUMINA. Currently supports update `2024/05/23`/`v1.46`; **not guaranteed** to work with future updates.
+This is a Fork of the tool originally made by fictionalist that allows exporting and importing dummy data into MELTY BLOOD: TYPE LUMINA, which now works with the current update: `V1.46`.
 
 * Allows exporting the data from any of the five dummy slots into a readable text file.
 * Allows importing the data from a saved file into any of the five slots of the game.
@@ -13,7 +13,7 @@ Tool that allows exporting and importing dummy data into MELTY BLOOD: TYPE LUMIN
 
 ## How to use
 
-Opening `ldd.exe` will open the main window of the tool. All the buttons will be disabled initially if the game is not running yet. Launching Lumina, and then clicking the window, will enable all buttons except the Save buttons.
+Opening `Lumina Dummy Data Tool.exe` will open the main window of the tool. All the buttons will be disabled initially if the game is not running yet. Launching Lumina, and then clicking the window, will enable all buttons except the Save buttons.
 If Lumina was running before the tool was launched, it will behave as normal and enable all the Load, Load as Reversal, and Clear buttons.
 
 Upon recording a dummy in any of the slots ingame, and then clicking on the tool's window, the length of the slot will be populated, as well as enable the corresponding Save button.
@@ -50,12 +50,15 @@ When reading, the tool will interpret direction 0 and 5 as the same direction (n
 
 This should allow for a fine tuning of the dummy data.
 
-Furthermore, you can insert comments with either `#` or `//` at the start of any line, or after any input.
+## In addition you can now add comments directly on the GUI and have these too be imported and exported
+
+![image](https://github.com/user-attachments/assets/e37a489d-f996-41df-8da8-cc5923ca1adb)
+
+If you so choose to, you can also insert comments the legacy way with either `#` or `//` at the start of any line, or after any input.
 
 ```
     # this is a comment
     4: 5C // this is also another comment
 ```
 
-Upon saving dummy data, it can be reloaded with reversal timing. This means that the tool will remove any frames that have no directional or button input until the very first frame that does have any meaningful input. This *should* be useful together with the Reversal Action, Guarding or Hit, and Same Time as Reversal Action Dummy Setting in-game.
 Upon saving dummy data, it can be reloaded with reversal timing. This means that the tool will remove any frames that have no directional or button input until the very first frame that does have any meaningful input. This *should* be useful together with the Reversal Action, Guarding or Hit, and Same Time as Reversal Action Dummy Setting in-game.

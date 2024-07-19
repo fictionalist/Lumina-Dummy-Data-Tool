@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <string>
 #include <sstream>
+#include <fstream>
 #include <commdlg.h>
 #include <ShObjIdl.h>
 
@@ -49,6 +50,12 @@ namespace UI {
 	static HWND Slot3_FrameCount_Text;
 	static HWND Slot4_FrameCount_Text;
 	static HWND Slot5_FrameCount_Text;
+
+	static HWND Slot1_Comments_Text;
+	static HWND Slot2_Comments_Text;
+	static HWND Slot3_Comments_Text;
+	static HWND Slot4_Comments_Text;
+	static HWND Slot5_Comments_Text;
 }
 
 void UI::setStatusText(std::string text) {
@@ -85,6 +92,12 @@ void UI::disableAllButtons() {
 	SetWindowTextA(Slot3_FrameCount_Text, "");
 	SetWindowTextA(Slot4_FrameCount_Text, "");
 	SetWindowTextA(Slot5_FrameCount_Text, "");
+
+	SetWindowTextA(Slot1_Comments_Text, "");
+	SetWindowTextA(Slot2_Comments_Text, "");
+	SetWindowTextA(Slot3_Comments_Text, "");
+	SetWindowTextA(Slot4_Comments_Text, "");
+	SetWindowTextA(Slot5_Comments_Text, "");
 }
 
 void UI::enableLoadButtons() {
@@ -133,11 +146,73 @@ bool UI::openFileIntoSlot(HWND hWnd, unsigned int slot, bool reversalTiming) {
 
 	buildDummyDataDisplay();
 
+	std::ifstream file(fileName.c_str());
+	std::string buffer;
+	std::getline(file, buffer);
+
+	if (buffer.find("Comments ~") != std::string::npos) {
+		if (slot == 1) {
+			std::ifstream file(fileName.c_str());
+			std::string buffer;
+			std::getline(file, buffer);
+			buffer = buffer.substr(11, buffer.size());
+			SetWindowTextA(Slot1_Comments_Text, buffer.c_str());
+		}
+		if (slot == 2) {
+			std::ifstream file(fileName.c_str());
+			std::string buffer;
+			std::getline(file, buffer);
+			buffer = buffer.substr(11, buffer.size());
+			SetWindowTextA(Slot2_Comments_Text, buffer.c_str());
+		}
+		if (slot == 3) {
+			std::ifstream file(fileName.c_str());
+			std::string buffer;
+			std::getline(file, buffer);
+			buffer = buffer.substr(11, buffer.size());
+			SetWindowTextA(Slot3_Comments_Text, buffer.c_str());
+		}
+		if (slot == 4) {
+			std::ifstream file(fileName.c_str());
+			std::string buffer;
+			std::getline(file, buffer);
+			buffer = buffer.substr(11, buffer.size());
+			SetWindowTextA(Slot4_Comments_Text, buffer.c_str());
+		}
+		if (slot == 5) {
+			std::ifstream file(fileName.c_str());
+			std::string buffer;
+			std::getline(file, buffer);
+			buffer = buffer.substr(11, buffer.size());
+			SetWindowTextA(Slot5_Comments_Text, buffer.c_str());
+		}
+
+	}
+	else {
+		char commentData[10] = "";
+		buildDummyDataDisplay();
+		if (slot == 1) {
+			SetWindowTextA(Slot1_Comments_Text, commentData);
+		}
+		if (slot == 2) {
+			SetWindowTextA(Slot2_Comments_Text, commentData);
+		}
+		if (slot == 3) {
+			SetWindowTextA(Slot3_Comments_Text, commentData);
+		}
+		if (slot == 4) {
+			SetWindowTextA(Slot4_Comments_Text, commentData);
+		}
+		if (slot == 5) {
+			SetWindowTextA(Slot5_Comments_Text, commentData);
+		}
+	}
+
 	return true;
 }
 
 bool UI::saveFileFromSlot(HWND hWnd, unsigned int slot) {
-	std::string fileName = "";
+	std::string fileName = ".txt";
 	fileName.resize(MAX_PATH);
 	OPENFILENAMEA ofn = {};
 	ofn.lStructSize = sizeof(OPENFILENAMEA);
@@ -163,6 +238,99 @@ bool UI::saveFileFromSlot(HWND hWnd, unsigned int slot) {
 	}
 	setStatusText(infoText.c_str());
 
+	if (slot == 1) {
+		std::stringstream stream;
+		wchar_t buffer[300] = { 0 };
+		GetWindowTextW(GetDlgItem(hWnd, Slot1_Comments), buffer, 300);
+		std::wstring alteredBuffer(buffer);
+		std::string str(alteredBuffer.begin(), alteredBuffer.end());
+		if(str.length() != 0){
+			stream << "Comments ~ " << str << "\n\n";
+
+			{
+				std::ifstream file(fileName.c_str());
+				stream << file.rdbuf();
+			}
+
+			std::fstream new_file(fileName.c_str(), std::ios::out);
+			new_file << stream.rdbuf();
+		}
+		
+	}
+	if (slot == 2) {
+		std::stringstream stream;
+		wchar_t buffer[300] = { 0 };
+		GetWindowTextW(GetDlgItem(hWnd, Slot2_Comments), buffer, 300);
+		std::wstring alteredBuffer(buffer);
+		std::string str(alteredBuffer.begin(), alteredBuffer.end());
+		if (str.length() != 0) {
+			stream << "Comments ~ " << str << "\n\n";
+
+			{
+				std::ifstream file(fileName.c_str());
+				stream << file.rdbuf();
+			}
+
+			std::fstream new_file(fileName.c_str(), std::ios::out);
+			new_file << stream.rdbuf();
+		}
+
+	}	if (slot == 3) {
+		std::stringstream stream;
+		wchar_t buffer[300] = { 0 };
+		GetWindowTextW(GetDlgItem(hWnd, Slot3_Comments), buffer, 300);
+		std::wstring alteredBuffer(buffer);
+		std::string str(alteredBuffer.begin(), alteredBuffer.end());
+		if (str.length() != 0) {
+			stream << "Comments ~ " << str << "\n\n";
+
+			{
+				std::ifstream file(fileName.c_str());
+				stream << file.rdbuf();
+			}
+
+			std::fstream new_file(fileName.c_str(), std::ios::out);
+			new_file << stream.rdbuf();
+		}
+
+	}	if (slot == 4) {
+		std::stringstream stream;
+		wchar_t buffer[300] = { 0 };
+		GetWindowTextW(GetDlgItem(hWnd, Slot4_Comments), buffer, 300);
+		std::wstring alteredBuffer(buffer);
+		std::string str(alteredBuffer.begin(), alteredBuffer.end());
+		if (str.length() != 0) {
+			stream << "Comments ~ " << str << "\n\n";
+
+			{
+				std::ifstream file(fileName.c_str());
+				stream << file.rdbuf();
+			}
+
+			std::fstream new_file(fileName.c_str(), std::ios::out);
+			new_file << stream.rdbuf();
+		}
+
+	}	if (slot == 5) {
+		std::stringstream stream;
+		wchar_t buffer[300] = { 0 };
+		GetWindowTextW(GetDlgItem(hWnd, Slot5_Comments), buffer, 300);
+		std::wstring alteredBuffer(buffer);
+		std::string str(alteredBuffer.begin(), alteredBuffer.end());
+		if (str.length() != 0) {
+			stream << "Comments ~ " << str << "\n\n";
+
+			{
+				std::ifstream file(fileName.c_str());
+				stream << file.rdbuf();
+			}
+
+			std::fstream new_file(fileName.c_str(), std::ios::out);
+			new_file << stream.rdbuf();
+		}
+
+	}
+
 	return true;
 }
 
@@ -171,8 +339,23 @@ bool UI::clearSlot(unsigned int slot) {
 	std::string infoText(256, '\0');
 	sprintf_s(&infoText[0], 256, "Cleared slot %d.", slot);
 	setStatusText(infoText.c_str());
+	char commentData[10] = "";
 	buildDummyDataDisplay();
-
+	if (slot == 1) {
+		SetWindowTextA(Slot1_Comments_Text, commentData);
+	}
+	if (slot == 2) {
+		SetWindowTextA(Slot2_Comments_Text, commentData);
+	}
+	if (slot == 3) {
+		SetWindowTextA(Slot3_Comments_Text, commentData);
+	}
+	if (slot == 4) {
+		SetWindowTextA(Slot4_Comments_Text, commentData);
+	}
+	if (slot == 5) {
+		SetWindowTextA(Slot5_Comments_Text, commentData);
+	}
 	return true;
 }
 
@@ -284,6 +467,12 @@ INT_PTR CALLBACK UI::windowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM l
 		UI::Slot3_FrameCount_Text = GetDlgItem(hWnd, Slot3_FrameCount);
 		UI::Slot4_FrameCount_Text = GetDlgItem(hWnd, Slot4_FrameCount);
 		UI::Slot5_FrameCount_Text = GetDlgItem(hWnd, Slot5_FrameCount);
+
+		UI::Slot1_Comments_Text = GetDlgItem(hWnd, Slot1_Comments);
+		UI::Slot2_Comments_Text = GetDlgItem(hWnd, Slot2_Comments);
+		UI::Slot3_Comments_Text = GetDlgItem(hWnd, Slot3_Comments);
+		UI::Slot4_Comments_Text = GetDlgItem(hWnd, Slot4_Comments);
+		UI::Slot5_Comments_Text = GetDlgItem(hWnd, Slot5_Comments);
 
 		UI::Slot1_Load_Button = GetDlgItem(hWnd, Slot1_LoadButton);
 		UI::Slot2_Load_Button = GetDlgItem(hWnd, Slot2_LoadButton);
