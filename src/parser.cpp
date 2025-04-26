@@ -35,6 +35,13 @@ bool Parser::toGameBytes(std::string& fileString, unsigned char* dummyData, size
 
 	size_t reversalOffset = 0;
 	bool foundFirstFrame = false;
+	int hasCommentMod = 0;
+
+	size_t firstLineSplit = lines[0].find("Comments ~");
+	if (firstLineSplit != std::string::npos) {
+		lines.erase(lines.begin());
+		lines.erase(lines.begin());
+	}
 
 	if (reversalTiming) {
 		size_t firstLineSplit = lines[0].find(":");
@@ -52,7 +59,7 @@ bool Parser::toGameBytes(std::string& fileString, unsigned char* dummyData, size
 	}
 
 	for (std::vector<std::string>::iterator line = lines.begin(); line != lines.end(); line++) {
-		if (line->find("//") == 0 || line->find("#") == 0) {
+		if (line->find("//") == 0 || line->find("#") == 0 || line->find("Comments") == 0) {
 			continue;
 		}
 
@@ -66,6 +73,10 @@ bool Parser::toGameBytes(std::string& fileString, unsigned char* dummyData, size
 			*line = line->substr(0, commentPos);
 		}
 		commentPos = line->find("#");
+		if (commentPos != std::string::npos) {
+			*line = line->substr(0, commentPos);
+		}
+		commentPos = line->find("Comments");
 		if (commentPos != std::string::npos) {
 			*line = line->substr(0, commentPos);
 		}

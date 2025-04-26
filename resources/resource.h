@@ -30,6 +30,11 @@
 #define Slot3_ClearButton               1023
 #define Slot4_ClearButton               1024
 #define Slot5_ClearButton               1025
+#define Slot1_Comments                  1026
+#define Slot2_Comments                  1027
+#define Slot3_Comments                  1028
+#define Slot4_Comments                  1029
+#define Slot5_Comments                  1030
 
 // Next default values for new objects
 // 

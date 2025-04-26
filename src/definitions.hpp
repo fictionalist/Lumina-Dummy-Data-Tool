@@ -2,7 +2,7 @@
 
 const unsigned int VersionMajor = 1;
 const unsigned int VersionMinor = 2;
-const unsigned int VersionPatch = 1;
+const unsigned int VersionPatch = 2;
 
 const wchar_t GameWindowName[] = L"MELTY BLOOD: TYPE LUMINA ";
 const wchar_t GameExecutableName[] = L"MBTL.exe";
