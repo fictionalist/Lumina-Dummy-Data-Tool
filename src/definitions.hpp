@@ -1,8 +1,8 @@
 #pragma once
 
 const unsigned int VersionMajor = 1;
-const unsigned int VersionMinor = 2;
-const unsigned int VersionPatch = 2;
+const unsigned int VersionMinor = 3;
+const unsigned int VersionPatch = 0;
 
 const wchar_t GameWindowName[] = L"MELTY BLOOD: TYPE LUMINA ";
 const wchar_t GameExecutableName[] = L"MBTL.exe";
@@ -37,3 +37,18 @@ const unsigned int DummyData4_BlockEndAddress = DummyData4_BlockStartAddress + D
 
 const unsigned int DummyData5_BlockStartAddress = 0x17D8778;
 const unsigned int DummyData5_BlockEndAddress = DummyData5_BlockStartAddress + DummyDataMaxSize;
+
+const unsigned int DummyData1_BlockStartAddress_P1 = 0x17CBAAA;
+const unsigned int DummyData1_BlockEndAddress_P1 = DummyData1_BlockStartAddress_P1 + DummyDataMaxSize;
+
+const unsigned int DummyData2_BlockStartAddress_P1 = 0x17CEDDD;
+const unsigned int DummyData2_BlockEndAddress_P1 = DummyData2_BlockStartAddress_P1 + DummyDataMaxSize;
+
+const unsigned int DummyData3_BlockStartAddress_P1 = 0x17D2110;
+const unsigned int DummyData3_BlockEndAddress_P1 = DummyData3_BlockStartAddress_P1 + DummyDataMaxSize;
+
+const unsigned int DummyData4_BlockStartAddress_P1 = 0x17D5443;
+const unsigned int DummyData4_BlockEndAddress_P1 = DummyData4_BlockStartAddress_P1 + DummyDataMaxSize;
+
+const unsigned int DummyData5_BlockStartAddress_P1 = 0x17D8776;
+const unsigned int DummyData5_BlockEndAddress_P1 = DummyData5_BlockStartAddress_P1 + DummyDataMaxSize;

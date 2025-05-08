@@ -135,7 +135,15 @@ bool UI::openFileIntoSlot(HWND hWnd, unsigned int slot, bool reversalTiming) {
 	sprintf_s(&infoText[0], 128, "Loading into slot %d.", slot);
 	setStatusText(infoText);
 
-	if (Game::importDummyData(fileName.c_str(), slot, reversalTiming)) {
+	int playerSlot;
+	if (IsDlgButtonChecked(hWnd, Radio_P1) == BST_CHECKED) {
+		playerSlot = 0;
+	}
+	else {
+		playerSlot = 1;
+	}
+
+	if (Game::importDummyData(fileName.c_str(), slot, reversalTiming, playerSlot)) {
 		sprintf_s(&infoText[0], 128, "Loaded into slot %d.", slot);
 	}
 	else {
@@ -230,7 +238,16 @@ bool UI::saveFileFromSlot(HWND hWnd, unsigned int slot) {
 	std::string infoText(256, '\0');
 	sprintf_s(&infoText[0], 256, "Exporting slot %d.", slot);
 	setStatusText(infoText.c_str());
-	if (Game::exportDummyData(slot, fileName.c_str())) {
+
+	int playerSlot;
+	if (IsDlgButtonChecked(hWnd, Radio_P1) == BST_CHECKED) {
+		playerSlot = 0;
+	}
+	else {
+		playerSlot = 1;
+	}
+
+	if (Game::exportDummyData(slot, fileName.c_str(), playerSlot)) {
 		sprintf_s(&infoText[0], 256, "Exported slot %d.", slot);
 	}
 	else {
@@ -497,6 +514,8 @@ INT_PTR CALLBACK UI::windowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM l
 		UI::Slot3_Clear_Button = GetDlgItem(hWnd, Slot3_ClearButton);
 		UI::Slot4_Clear_Button = GetDlgItem(hWnd, Slot4_ClearButton);
 		UI::Slot5_Clear_Button = GetDlgItem(hWnd, Slot5_ClearButton);
+
+		CheckRadioButton(hWnd, Radio_P1, Radio_P2, Radio_P2);
 
 		UI::buildDummyDataDisplay();
 

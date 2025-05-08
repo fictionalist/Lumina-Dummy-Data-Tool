@@ -1,0 +1,6 @@
+﻿  game.cpp
+  parser.cpp
+  ui.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+  Generating Code...
+  ldd.vcxproj -> C:\Users\Max Ichinose\Documents\GitHub\Lumina Dummy Data Tool\bin\ldd_debug.exe

@@ -107,7 +107,7 @@ size_t Game::getDummyDataSize(unsigned int slot) {
 	return frames;
 }
 
-bool Game::importDummyData(std::string path, unsigned int slot, bool reversalTiming) {
+bool Game::importDummyData(std::string path, unsigned int slot, bool reversalTiming, int playerSlot) {
 	std::ifstream file(path.c_str());
 	std::stringstream ss;
 	std::string buffer;
@@ -130,52 +130,100 @@ bool Game::importDummyData(std::string path, unsigned int slot, bool reversalTim
 
 	unsigned int enabledFlag = ((0x3333U) * (slot - 1));
 
-	switch (slot) {
-	case 1:
-		writeMemory(DummyData1_SizeAddress, &dummySize, sizeof(int));
-		writeMemory(DummyData1_BlockStartAddress, (void*)dummyData, dummySize);
-		writeMemory(DummyData1_EnabledFlag, &enabledFlag, sizeof(int));
-		break;
-	case 2:
-		writeMemory(DummyData2_SizeAddress, &dummySize, sizeof(int));
-		writeMemory(DummyData2_BlockStartAddress, (void*)dummyData, dummySize);
-		writeMemory(DummyData2_EnabledFlag, &enabledFlag, sizeof(int));
-		break;
-	case 3:
-		writeMemory(DummyData3_SizeAddress, &dummySize, sizeof(int));
-		writeMemory(DummyData3_BlockStartAddress, (void*)dummyData, dummySize);
-		writeMemory(DummyData3_EnabledFlag, &enabledFlag, sizeof(int));
-		break;
-	case 4:
-		writeMemory(DummyData4_SizeAddress, &dummySize, sizeof(int));
-		writeMemory(DummyData4_BlockStartAddress, (void*)dummyData, dummySize);
-		writeMemory(DummyData4_EnabledFlag, &enabledFlag, sizeof(int));
-		break;
-	case 5:
-		writeMemory(DummyData5_SizeAddress, &dummySize, sizeof(int));
-		writeMemory(DummyData5_BlockStartAddress, (void*)dummyData, dummySize);
-		writeMemory(DummyData5_EnabledFlag, &enabledFlag, sizeof(int));
-		break;
-	default:
-		return false;
+	if (playerSlot == 0) {
+		switch (slot) {
+		case 1:
+			writeMemory(DummyData1_SizeAddress, &dummySize, sizeof(int));
+			writeMemory(DummyData1_BlockStartAddress_P1, (void*)dummyData, dummySize);
+			writeMemory(DummyData1_EnabledFlag, &enabledFlag, sizeof(int));
+			break;
+		case 2:
+			writeMemory(DummyData2_SizeAddress, &dummySize, sizeof(int));
+			writeMemory(DummyData2_BlockStartAddress_P1, (void*)dummyData, dummySize);
+			writeMemory(DummyData2_EnabledFlag, &enabledFlag, sizeof(int));
+			break;
+		case 3:
+			writeMemory(DummyData3_SizeAddress, &dummySize, sizeof(int));
+			writeMemory(DummyData3_BlockStartAddress_P1, (void*)dummyData, dummySize);
+			writeMemory(DummyData3_EnabledFlag, &enabledFlag, sizeof(int));
+			break;
+		case 4:
+			writeMemory(DummyData4_SizeAddress, &dummySize, sizeof(int));
+			writeMemory(DummyData4_BlockStartAddress_P1, (void*)dummyData, dummySize);
+			writeMemory(DummyData4_EnabledFlag, &enabledFlag, sizeof(int));
+			break;
+		case 5:
+			writeMemory(DummyData5_SizeAddress, &dummySize, sizeof(int));
+			writeMemory(DummyData5_BlockStartAddress_P1, (void*)dummyData, dummySize);
+			writeMemory(DummyData5_EnabledFlag, &enabledFlag, sizeof(int));
+			break;
+		default:
+			return false;
+		}
 	}
+	if (playerSlot == 1) {
+		switch (slot) {
+		case 1:
+			writeMemory(DummyData1_SizeAddress, &dummySize, sizeof(int));
+			writeMemory(DummyData1_BlockStartAddress, (void*)dummyData, dummySize);
+			writeMemory(DummyData1_EnabledFlag, &enabledFlag, sizeof(int));
+			break;
+		case 2:
+			writeMemory(DummyData2_SizeAddress, &dummySize, sizeof(int));
+			writeMemory(DummyData2_BlockStartAddress, (void*)dummyData, dummySize);
+			writeMemory(DummyData2_EnabledFlag, &enabledFlag, sizeof(int));
+			break;
+		case 3:
+			writeMemory(DummyData3_SizeAddress, &dummySize, sizeof(int));
+			writeMemory(DummyData3_BlockStartAddress, (void*)dummyData, dummySize);
+			writeMemory(DummyData3_EnabledFlag, &enabledFlag, sizeof(int));
+			break;
+		case 4:
+			writeMemory(DummyData4_SizeAddress, &dummySize, sizeof(int));
+			writeMemory(DummyData4_BlockStartAddress, (void*)dummyData, dummySize);
+			writeMemory(DummyData4_EnabledFlag, &enabledFlag, sizeof(int));
+			break;
+		case 5:
+			writeMemory(DummyData5_SizeAddress, &dummySize, sizeof(int));
+			writeMemory(DummyData5_BlockStartAddress, (void*)dummyData, dummySize);
+			writeMemory(DummyData5_EnabledFlag, &enabledFlag, sizeof(int));
+			break;
+		default:
+			return false;
+		}
+	}
+
 	return true;
 }
 
-bool Game::exportDummyData(unsigned int slot, std::string path) {
+bool Game::exportDummyData(unsigned int slot, std::string path, int playerSlot) {
 	size_t dummySize = getDummyDataSize(slot);
 	unsigned char dummyData[DummyDataMaxSize];
 	memset(dummyData, 0, sizeof(dummyData));
 
-	switch (slot) {
-	case 1: readMemory(DummyData1_BlockStartAddress, &dummyData, dummySize); break;
-	case 2: readMemory(DummyData2_BlockStartAddress, &dummyData, dummySize); break;
-	case 3: readMemory(DummyData3_BlockStartAddress, &dummyData, dummySize); break;
-	case 4: readMemory(DummyData4_BlockStartAddress, &dummyData, dummySize); break;
-	case 5: readMemory(DummyData5_BlockStartAddress, &dummyData, dummySize); break;
-	default:
-		return false;
+	if (playerSlot == 0) {
+		switch (slot) {
+		case 1: readMemory(DummyData1_BlockStartAddress_P1, &dummyData, dummySize); break;
+		case 2: readMemory(DummyData2_BlockStartAddress_P1, &dummyData, dummySize); break;
+		case 3: readMemory(DummyData3_BlockStartAddress_P1, &dummyData, dummySize); break;
+		case 4: readMemory(DummyData4_BlockStartAddress_P1, &dummyData, dummySize); break;
+		case 5: readMemory(DummyData5_BlockStartAddress_P1, &dummyData, dummySize); break;
+		default:
+			return false;
+		}
 	}
+	if (playerSlot == 1) {
+		switch (slot) {
+		case 1: readMemory(DummyData1_BlockStartAddress, &dummyData, dummySize); break;
+		case 2: readMemory(DummyData2_BlockStartAddress, &dummyData, dummySize); break;
+		case 3: readMemory(DummyData3_BlockStartAddress, &dummyData, dummySize); break;
+		case 4: readMemory(DummyData4_BlockStartAddress, &dummyData, dummySize); break;
+		case 5: readMemory(DummyData5_BlockStartAddress, &dummyData, dummySize); break;
+		default:
+			return false;
+		}
+	}
+
 
 	std::string buffer = Parser::toFile(dummyData, dummySize);
 
@@ -193,26 +241,31 @@ bool Game::clearDummyData(unsigned int slot) {
 	switch (slot) {
 	case 1:
 		writeMemory(DummyData1_BlockStartAddress, &dummyData, DummyDataMaxSize);
+		writeMemory(DummyData1_BlockStartAddress_P1, &dummyData, DummyDataMaxSize);
 		writeMemory(DummyData1_SizeAddress, &size, sizeof(int));
 		writeMemory(DummyData1_EnabledFlag, &size, sizeof(int));
 		break;
 	case 2:
 		writeMemory(DummyData2_BlockStartAddress, &dummyData, DummyDataMaxSize);
+		writeMemory(DummyData2_BlockStartAddress_P1, &dummyData, DummyDataMaxSize);
 		writeMemory(DummyData2_SizeAddress, &size, sizeof(int));
 		writeMemory(DummyData2_EnabledFlag, &size, sizeof(int));
 		break;
 	case 3:
 		writeMemory(DummyData3_BlockStartAddress, &dummyData, DummyDataMaxSize);
+		writeMemory(DummyData3_BlockStartAddress_P1, &dummyData, DummyDataMaxSize);
 		writeMemory(DummyData3_SizeAddress, &size, sizeof(int));
 		writeMemory(DummyData3_EnabledFlag, &size, sizeof(int));
 		break;
 	case 4:
 		writeMemory(DummyData4_BlockStartAddress, &dummyData, DummyDataMaxSize);
+		writeMemory(DummyData4_BlockStartAddress_P1, &dummyData, DummyDataMaxSize);
 		writeMemory(DummyData4_SizeAddress, &size, sizeof(int));
 		writeMemory(DummyData4_EnabledFlag, &size, sizeof(int));
 		break;
 	case 5:
 		writeMemory(DummyData5_BlockStartAddress, &dummyData, DummyDataMaxSize);
+		writeMemory(DummyData5_BlockStartAddress_P1, &dummyData, DummyDataMaxSize);
 		writeMemory(DummyData5_SizeAddress, &size, sizeof(int));
 		writeMemory(DummyData5_EnabledFlag, &size, sizeof(int));
 		break;

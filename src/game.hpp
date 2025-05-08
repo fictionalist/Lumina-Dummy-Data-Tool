@@ -12,7 +12,7 @@ namespace Game {
 	void writeMemory(DWORD address, void* data, size_t size);
 	size_t getDummyDataSize(unsigned int slot);
 
-	bool importDummyData(std::string path, unsigned int slot, bool reversalTiming);
-	bool exportDummyData(unsigned int slot, std::string path);
+	bool importDummyData(std::string path, unsigned int slot, bool reversalTiming, int playerSlot);
+	bool exportDummyData(unsigned int slot, std::string path, int playerSlot);
 	bool clearDummyData(unsigned int slot);
 }

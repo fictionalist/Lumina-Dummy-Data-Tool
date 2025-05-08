@@ -35,14 +35,17 @@
 #define Slot3_Comments                  1028
 #define Slot4_Comments                  1029
 #define Slot5_Comments                  1030
+#define Radio_P1                        1042
+#define Radio_P2                        1043
+#define IDC_Dummy                       1044
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        103
+#define _APS_NEXT_RESOURCE_VALUE        104
 #define _APS_NEXT_COMMAND_VALUE         40001
-#define _APS_NEXT_CONTROL_VALUE         1024
+#define _APS_NEXT_CONTROL_VALUE         1045
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
