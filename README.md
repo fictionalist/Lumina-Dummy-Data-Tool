@@ -6,6 +6,7 @@ Tool that allows exporting and importing dummy data into MELTY BLOOD: TYPE LUMIN
 * Allows importing the data from a saved file into any of the five slots of the game.
 * Allows importing the data with a reversal timing, removing any empty frames before the first directional or button input.
 * Allows manually clearing any of the slots as an added convenience through the user interface.
+* Allows setting the dummy recording to be both saved and exported to either Player 1 or Player 2 side.
 
 ## Requirements
 
@@ -16,8 +17,7 @@ Tool that allows exporting and importing dummy data into MELTY BLOOD: TYPE LUMIN
 Opening `Lumina Dummy Data Tool.exe` will open the main window of the tool. All the buttons will be disabled initially if the game is not running yet. Launching Lumina, and then clicking the window, will enable all buttons except the Save buttons.
 If Lumina was running before the tool was launched, it will behave as normal and enable all the Load, Load as Reversal, and Clear buttons.
 
-Upon recording a dummy in any of the slots ingame, and then clicking on the tool's window, the length of the slot will be populated, as well as enable the corresponding Save button. You can additionally set the dummy recording to be both saved and exported to either Player 1 or Player 2 side.
-
+Upon recording a dummy in any of the slots ingame, and then clicking on the tool's window, the length of the slot will be populated, as well as enable the corresponding Save button. 
 
 ## Limitations and troubleshooting
 
