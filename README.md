@@ -16,14 +16,14 @@ Tool that allows exporting and importing dummy data into MELTY BLOOD: TYPE LUMIN
 Opening `Lumina Dummy Data Tool.exe` will open the main window of the tool. All the buttons will be disabled initially if the game is not running yet. Launching Lumina, and then clicking the window, will enable all buttons except the Save buttons.
 If Lumina was running before the tool was launched, it will behave as normal and enable all the Load, Load as Reversal, and Clear buttons.
 
-Upon recording a dummy in any of the slots ingame, and then clicking on the tool's window, the length of the slot will be populated, as well as enable the corresponding Save button.
+Upon recording a dummy in any of the slots ingame, and then clicking on the tool's window, the length of the slot will be populated, as well as enable the corresponding Save button. You can additionally set the dummy recording to be both saved and exported to either Player 1 or Player 2 side.
 
 
 ## Limitations and troubleshooting
 
 * The tool does not extract save states.
 * The tool does not handle the Rapid Beat Type for either player. This is important when sharing dummy data, as people might prefer to access Rapid Beat and Rapid Beat Launch differently, or not at all. (5AAA vs 5A 5A+B 5A+B, for instance)
-* As the player, you must be on P1 side on character selection. The dummy data will only work properly if the dummy is on P2.
+* You must save with the matching Player side for the dummy replay to export correctly, otherwise the output will be blank. 
 
 ## Dummy data format
 
@@ -52,7 +52,7 @@ This should allow for a fine tuning of the dummy data.
 
 ## In addition you can now add comments directly on the GUI and have these too be imported and exported
 
-![image](https://github.com/user-attachments/assets/e37a489d-f996-41df-8da8-cc5923ca1adb)
+![Image](https://github.com/user-attachments/assets/8539f683-2e57-478c-889e-ba88bd51af5d)
 
 If you so choose to, you can also insert comments the legacy way with either `#` or `//` at the start of any line, or after any input.
 
@@ -62,3 +62,4 @@ If you so choose to, you can also insert comments the legacy way with either `#`
 ```
 
 Upon saving dummy data, it can be reloaded with reversal timing. This means that the tool will remove any frames that have no directional or button input until the very first frame that does have any meaningful input. This *should* be useful together with the Reversal Action, Guarding or Hit, and Same Time as Reversal Action Dummy Setting in-game.
+
